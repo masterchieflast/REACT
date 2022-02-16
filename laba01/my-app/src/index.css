@@ -1,0 +1,57 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: navajowhite;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.headerSide{
+  font-size: 30px;
+  display: inline-block;
+}
+
+.headerSide div{
+  margin-bottom: 13px;
+}
+
+.headerUp{
+  font-size: 30px;
+}
+
+.headerUpIn{
+  margin-right: 35px;
+  display: inline-block;
+}
+
+.Chess{
+  font-size: 0;
+  width: 400px;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.ChessWhite{
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background-color: white;
+}
+
+.ChessBlack{
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background-color: black;
+}
+
+.main{
+  margin-top: 100px;
+  text-align: center;
+}
