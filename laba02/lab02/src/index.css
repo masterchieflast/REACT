@@ -5,9 +5,50 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #282c34;
+  font-size: 20px;
+  text-shadow: firebrick 1px 0 10px;
+}
+
+input{
+  background-color: snow;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.Job{
+text-align: center;
+}
+
+label{
+  font-size: 20px;
+}
+
+.custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+a:link, a:visited {
+  width: 170px;
+  text-shadow: purple 1px 0 10px;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 50px;
+}
+
+a:hover, a:active {
+  text-shadow: red 1px 0 10px;
+  color: white;
+}
+
+li{
+  list-style-type: none;
 }

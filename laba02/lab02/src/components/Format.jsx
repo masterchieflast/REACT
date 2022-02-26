@@ -44,7 +44,6 @@ const Format = (props) => {
                 min="-12"
                 max="+12"/>
             <br/>
-            <MyButton type='button' onClick={addFormat}>Submit</MyButton>
             </form>
             <Datee>{format}{time}</Datee>
 

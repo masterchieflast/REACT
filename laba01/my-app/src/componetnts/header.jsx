@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const Header = () => {
-    let array = ['a','b','c','d','e','f','g','h'];
+    let array = ["a","b","c","d","e","f","g","h"];
     let arr = [];
 
     arr.push(<div className='headerUpIn'/>);
