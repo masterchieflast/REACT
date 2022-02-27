@@ -1,0 +1,35 @@
+div{
+  text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input{
+  border-color: darkred;
+  background-color: navajowhite;
+  color: snow;
+}
+
+.lest{
+  text-align: center;
+}
+
+.lest form{
+  margin: auto;
+  width: 400px;
+}
+
+.fff{
+  border-right: none;
+  width: 20px;
+  padding: 0 0 2px;
+}
+
+.mainIn{
+  border-left: none;
+}
