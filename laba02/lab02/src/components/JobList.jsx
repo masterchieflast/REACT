@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import Miner from "./Miner";
-import Format from "./Format";
 
-const JobList = (props) => {
+function JobList(props) {
 
     let [cheak, setsCheak] = useState(true);
     let kolor = {color: "red"}
@@ -21,6 +20,6 @@ const JobList = (props) => {
                 <Miner >{props.children}{cheak}</Miner></label>
         </div>
     );
-};
+}
 
 export default JobList;

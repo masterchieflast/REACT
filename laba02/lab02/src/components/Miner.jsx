@@ -1,5 +1,4 @@
 import React from 'react';
-import JobList from "./JobList";
 
 const Miner = (props) => {
     const arrayLink = ["wiki", "first google link", "Job", "location", "equipment", "training", "testing"]
@@ -10,7 +9,6 @@ const Miner = (props) => {
             </div>
         );
     } else {
-        //if (props.children[0] === "miner") {
             const array = ["https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D1%85%D1%82%D1%91%D1%80", "https://edunews.ru/professii/obzor/tehnicheskie/shahter.html", "https://rabota.by/search/vacancy?search_field=name&search_field=company_name&search_field=description&text=%D0%A8%D0%B0%D1%85%D1%82%D1%91%D1%80&from=suggest_post", "https://www.jaguarmining.com/", "https://www.21vek.by/hammers/1088613/", "https://www.360training.com/course/msha-new-miner-training", "https://www.dtek.com/shakhtertest/"]
             let l = 0;
             return (
