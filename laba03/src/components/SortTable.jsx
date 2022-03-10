@@ -1,47 +1,25 @@
 import React, {useState} from 'react';
 
 const SortTable = () => {
-    const FoodList1 = [
-        {
-            Name: "Butter",
-            Price: 0.9,
-            Stock: 77,
-        },
-        {
-            Name: "Milk",
-            Price: 1.9,
-            Stock: 45,
-        },
-    ]
-    const FoodList2 = [
-        {
-            Name: "Butter",
-            Price: 0.9,
-            Stock: 77,
-        },
-        {
-            Name: "Yoghurt",
-            Price: 2.4,
-            Stock: 12,
-        },
-        {
-            Name: "Milk",
-            Price: 1.9,
-            Stock: 45,
-        },
-        {
-            Name: "Pasta",
-            Price: 3.2,
-            Stock: 24,
-        },
-        {
-            Name: "Bread",
-            Price: 2.9,
-            Stock: 11,
-        },
-    ]
+    const FoodList1 = [{
+        Name: "Butter", Price: 0.9, Stock: 77,
+    }, {
+        Name: "Milk", Price: 1.9, Stock: 45,
+    },]
+    const FoodList2 = [{
+        Name: "Butter", Price: 0.9, Stock: 77,
+    }, {
+        Name: "Yoghurt", Price: 2.4, Stock: 12,
+    }, {
+        Name: "Milk", Price: 1.9, Stock: 45,
+    }, {
+        Name: "Pasta", Price: 3.2, Stock: 24,
+    }, {
+        Name: "Bread", Price: 2.9, Stock: 11,
+    },]
     const FoodList3 = []
-    let FoodList = FoodList2;
+
+    let [FoodList, setFoodList] = useState(FoodList2);
 
     let [SortName, setSortName] = useState(false);
     let [SortPrice, setSortPrice] = useState(false);
@@ -52,12 +30,18 @@ const SortTable = () => {
     let [SortPrice2, setSortPrice2] = useState(false);
     let [SortStock2, setSortStock2] = useState(false);
 
+    let [kolor, setkolor] = useState({backgroundColor: "coral"});
 
+    if(FoodList.length < 3){
+        kolor = ({backgroundColor: "Yellow",})
+    }
 
     function Table() {
-        if(SortName){
+
+
+        if (SortName) {
             setSortName(false)
-            FoodList.sort(function(a, b) {
+            FoodList.sort(function (a, b) {
                 var nameA = a.Name.toUpperCase(); // ignore upper and lowercase
                 var nameB = b.Name.toUpperCase(); // ignore upper and lowercase
                 if (nameA < nameB) {
@@ -71,63 +55,84 @@ const SortTable = () => {
                 return 0;
             });
 
-            if(SortName2){
+            if (SortName2) {
                 setSortName2(false)
-                return(
-                    <div>
-                        <table>
-                            {}
-                        </table>
-                    </div>
-                )
-            }else{
+            } else {
                 setSortName2(true)
                 FoodList.reverse()
             }
         }
+
+        if (SortPrice) {
+            setSortPrice(false)
+            FoodList.sort(function (a, b) {
+                return a.Price - b.Price;
+            });
+
+            if (SortPrice2) {
+                setSortPrice2(false)
+            } else {
+                setSortPrice2(true)
+                FoodList.reverse()
+            }
+        }
+
+        if (SortStock) {
+            setSortStock(false)
+            FoodList.sort(function (a, b) {
+                return a.Stock - b.Stock;
+            });
+
+            if (SortStock2) {
+                setSortStock2(false)
+            } else {
+                setSortStock2(true)
+                FoodList.reverse()
+            }
+        }
+
+
+        return (<div className="foodTable">
+                <table style={kolor}>
+                    {FoodList.map((food) => <>
+                        <tr>{food.Name}</tr>
+                        <tr>{food.Price}</tr>
+                        <tr>{food.Stock}</tr>
+                    </>)}
+                </table>
+            </div>)
+
     }
 
-    return (
-        <div>
+    return (<div>
             <form action="">
                 <input
                     type="text"
                     value="Name"
                     onClick={e => {
                         setSortName(true)
-                        setSortPrice(false)
-                        setSortStock(false)
-                    }
-                }
+                    }}
                     readOnly
                 />
                 <input
                     type="text"
                     value="Price"
                     onClick={e1 => {
-                        setSortName(false)
                         setSortPrice(true)
-                        setSortStock(false)
-
-                    }
-                }
+                    }}
                     readOnly
                 />
                 <input
                     type="text"
                     value="In Stock"
                     onClick={e2 => {
-                        setSortName(false)
-                        setSortPrice(false)
                         setSortStock(true)
-                    }
-                }
+                    }}
                     readOnly
                 />
             </form>
             {Table()}
-        </div>
-    );
+        </div>);
 };
 
 export default SortTable;

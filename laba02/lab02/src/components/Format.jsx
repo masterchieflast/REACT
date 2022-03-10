@@ -1,5 +1,4 @@
 import React, {useRef, useState} from 'react';
-import MyButton from "./MyButton";
 import MyInput from "./input/MyInput";
 import Datee from "./Datee";
 
@@ -7,7 +6,7 @@ const Format = (props) => {
 
     let [format, setFormats] = useState();
     let [time, setTime] = useState(0);
-    const BodyInputRef = useRef();
+    //const BodyInputRef = useRef();
 
     const addFormat = (e) => {
         console.log(format)

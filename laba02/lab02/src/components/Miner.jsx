@@ -5,7 +5,7 @@ const Miner = (props) => {
     if (props.children[1]) {
         return (
             <div>
-                <h2>{props.children[0]          }</h2>
+                <h2>{props.children[0]}</h2>
             </div>
         );
     } else {
